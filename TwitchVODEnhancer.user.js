@@ -3,7 +3,7 @@
 // @author       sooqua
 // @namespace    https://github.com/sooqua/
 // @downloadURL  https://github.com/sooqua/TwitchVODEnhancer/raw/master/TwitchVODEnhancer.user.js
-// @version      0.3
+// @version      0.4
 // @match        *://*.twitch.tv/*
 // @run-at       document-start
 // @grant        GM_addStyle
@@ -154,7 +154,7 @@
 
         let sheet;
         c.addEventListener('mousemove', function(e) {
-            let r = c.getBoundingClientRect(),
+            let r = wrapper.getBoundingClientRect(),
                 m = (e.pageX - r.left) / r.width * 100;
             c.style.transformOrigin = m + '% center 0px';
             let m_h = (parseFloat(slider_handle.style.left) * zoom - m * zoom + m).clamp(0, 100);
